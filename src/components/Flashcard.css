@@ -5,7 +5,6 @@
   padding: 0;
   width: 100%;
   max-width: 560px;
-  aspect-ratio: 3 / 2;
   perspective: 1200px;
   cursor: pointer;
   font: inherit;
@@ -51,8 +50,9 @@
 
 .flashcard-inner {
   position: relative;
+  display: grid;
   width: 100%;
-  height: 100%;
+  min-height: 320px;
   transform-style: preserve-3d;
   transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -62,8 +62,8 @@
 }
 
 .flashcard-face {
-  position: absolute;
-  inset: 0;
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,4 +96,19 @@
 
 .flashcard:hover .flashcard-face {
   border-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .flashcard-inner {
+    min-height: 240px;
+  }
+
+  .flashcard-face {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .flashcard-front {
+    font-size: 1.15rem;
+  }
 }

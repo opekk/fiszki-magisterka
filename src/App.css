@@ -1,17 +1,25 @@
 main {
   max-width: 720px;
   margin: 0 auto;
-  padding: 3rem 1.25rem;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 4vw, 1.25rem);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1.25rem, 4vw, 2rem);
 }
 
 .deck-controls {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0.6rem;
+}
+
+.deck-nav {
+  display: flex;
   gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .deck-controls button,

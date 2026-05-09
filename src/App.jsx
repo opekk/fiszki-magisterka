@@ -42,19 +42,21 @@ function App() {
         direction={direction}
       />
       <div className="deck-controls">
-        <button type="button" onClick={prev} disabled={index === 0}>
-          ← Poprzednia
-        </button>
+        <div className="deck-nav">
+          <button type="button" onClick={prev} disabled={index === 0}>
+            ← Poprzednia
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            disabled={index === deck.length - 1}
+          >
+            Następna →
+          </button>
+        </div>
         <span className="deck-counter">
           {index + 1} / {deck.length}
         </span>
-        <button
-          type="button"
-          onClick={next}
-          disabled={index === deck.length - 1}
-        >
-          Następna →
-        </button>
       </div>
       <button type="button" className="deck-shuffle" onClick={randomize}>
         🔀 Wylosuj kolejność

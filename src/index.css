@@ -26,6 +26,8 @@ h1 {
   font-weight: 500;
   letter-spacing: -0.015em;
   margin: 0;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  text-align: center;
 }
 
 button {
