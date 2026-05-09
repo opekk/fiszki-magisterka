@@ -1,0 +1,99 @@
+.flashcard {
+  appearance: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 3 / 2;
+  perspective: 1200px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+@keyframes flashcard-slide-from-right {
+  from {
+    transform: translateX(48px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flashcard-slide-from-left {
+  from {
+    transform: translateX(-48px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.flashcard-enter-next {
+  animation: flashcard-slide-from-right 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.flashcard-enter-prev {
+  animation: flashcard-slide-from-left 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flashcard-enter-next,
+  .flashcard-enter-prev {
+    animation: none;
+  }
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.flashcard.is-flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  box-shadow: 0 1px 2px rgba(80, 60, 40, 0.04),
+    0 8px 24px rgba(80, 60, 40, 0.08);
+}
+
+.flashcard-front {
+  color: var(--fg);
+  font-size: 1.4rem;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+  background: var(--accent-soft);
+  color: var(--fg);
+  border-color: var(--accent);
+}
+
+.flashcard:hover .flashcard-face {
+  border-color: var(--accent);
+}
