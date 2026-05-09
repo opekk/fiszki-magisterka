@@ -62,3 +62,22 @@ main {
   border-color: #b3573a;
   color: var(--bg-elevated);
 }
+
+.site-footer {
+  margin-top: auto;
+  padding-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 120ms ease;
+}
+
+.site-footer a:hover {
+  border-bottom-color: var(--accent);
+}

@@ -59,6 +59,12 @@ function App() {
       <button type="button" className="deck-shuffle" onClick={randomize}>
         🔀 Wylosuj kolejność
       </button>
+      <footer className="site-footer">
+        Bugi / pomysły:{' '}
+        <a href="mailto:oldakowskimaciej16@gmail.com?subject=Fiszki%20%E2%80%94%20feedback">
+          oldakowskimaciej16@gmail.com
+        </a>
+      </footer>
     </main>
   )
 }
