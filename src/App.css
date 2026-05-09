@@ -1,0 +1,64 @@
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.deck-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.deck-controls button,
+.deck-shuffle {
+  background: var(--bg-elevated);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 120ms ease, color 120ms ease, background 120ms ease,
+    transform 120ms ease;
+}
+
+.deck-controls button:hover:not(:disabled),
+.deck-shuffle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.deck-controls button:active:not(:disabled),
+.deck-shuffle:active {
+  transform: translateY(1px);
+}
+
+.deck-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.deck-counter {
+  font-variant-numeric: tabular-nums;
+  min-width: 6ch;
+  text-align: center;
+  color: var(--fg-muted);
+  font-size: 0.95rem;
+}
+
+.deck-shuffle {
+  background: var(--accent);
+  color: var(--bg-elevated);
+  border-color: var(--accent);
+}
+
+.deck-shuffle:hover {
+  background: #b3573a;
+  border-color: #b3573a;
+  color: var(--bg-elevated);
+}
